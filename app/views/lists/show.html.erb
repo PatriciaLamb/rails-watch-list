@@ -1,0 +1,12 @@
+<h2><%= @list.name %></h2>
+
+
+<% @list.movies.each do |movie| %>
+  <p><%=movie.title %></p>
+    <% @list.bookmarks.each do |bookmark| %>
+      <p><%= bookmark.comment %></p>
+    <% end %>
+<% end %>
+<%= link_to "Destroy this bookmark",
+  @bookmark,
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
