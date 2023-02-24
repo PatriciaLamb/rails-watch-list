@@ -12,7 +12,7 @@ class BookmarksController < ApplicationController
     redirect_to lists_path, notice: "Bookmark was successfully created."
   end
 
-  def delete
+  def destroy
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
     redirect_to lists_path, status: :see_other
